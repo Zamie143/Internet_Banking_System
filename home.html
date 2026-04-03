@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoooo</title>
+    <link rel="icon" type="image/png" href="./assets/payoo.png">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#f4f5f7] min-h-[100vh]">
+    <div class="max-w-lg mx-auto bg-white rounded-b-xl px-2 sm:px-0">
+      <div
+        class="min-h-[50px] flex justify-between items-center border-b-1 border-gray-400 p-2 sm:p-3"
+      >
+        <div class="flex items-center">
+          <img src="./assets/Group.png" class="h-[40px] sm:h-[50px]" alt="" />
+          <div class="ml-2 sm:ml-3">
+            <h2 class="font-bold text-sm sm:text-base">$<span id="available-balance">45000</span></h2>
+            <p class="text-[#08080880] text-xs sm:text-sm">Available Balance</p>
+          </div>
+        </div>
+        <div>
+          <button id="logout-btn" class="text-[#08080880] btn btn-sm sm:btn-md text-xs sm:text-base">
+            <i
+              class="fa-solid fa-arrow-right-from-bracket rotate-180 text-gray-700 hidden sm:inline"
+            ></i>
+            <span>Log Out</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-6 sm:mt-8 p-3">
+        <h1 class="text-xl sm:text-2xl font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="text-[#08080880] text-sm sm:text-base">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+
+      <div class="min-h-[200px] grid grid-cols-3 gap-2 sm:gap-4 p-2 sm:p-3">
+        <div id="add-button" class="form-btn border-2 border-gray-300 text-center p-2 sm:p-3 rounded-xl cursor-pointer">
+          <img src="./assets/wallet1.png" class="mx-auto w-8 sm:w-auto" alt="" />
+          <h2 class="text-xs sm:text-sm mt-1">Add Money</h2>
+        </div>
+        <div id="cash-out-button" class="form-btn border-2 border-gray-300 text-center p-2 sm:p-3 rounded-xl cursor-pointer">
+          <img src="./assets/send1.png" class="mx-auto w-8 sm:w-auto" alt="" />
+          <h2 class="text-xs sm:text-sm mt-1">CashOut</h2>
+        </div>
+        <div id="transfer-button" class="form-btn border-2 border-gray-300 text-center p-2 sm:p-3 rounded-xl cursor-pointer">
+          <img src="./assets/money1.png" class="mx-auto w-8 sm:w-auto" alt="" />
+          <h2 class="text-xs sm:text-sm mt-1">Transfer</h2>
+        </div>
+        <div id="bonus-button" class="form-btn border-2 border-gray-300 text-center p-2 sm:p-3 rounded-xl cursor-pointer">
+          <img src="./assets/bonus1.png" class="mx-auto w-8 sm:w-auto" alt="" />
+          <h2 class="text-xs sm:text-sm mt-1">Loan</h2>
+        </div>
+        <div id="bill-button" class="form-btn border-2 border-gray-300 text-center p-2 sm:p-3 rounded-xl cursor-pointer">
+          <img src="./assets/purse1.png" class="mx-auto w-8 sm:w-auto" alt="" />
+          <h2 class="text-xs sm:text-sm mt-1">Pay Bill</h2>
+        </div>
+        <div id="transactions-button" class="form-btn border-2 border-gray-300 text-center p-2 sm:p-3 rounded-xl cursor-pointer">
+          <img src="./assets/transaction1.png" class="mx-auto w-8 sm:w-auto" alt="" />
+          <h2 class="text-xs sm:text-sm mt-1">Transactions</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="all-form-sections max-w-lg mx-auto px-2 sm:px-0">
+        <!-- add money -->
+        <div class="form" id="add-money-parent" >
+            <h1 class="my-5 font-bold text-lg sm:text-xl px-2">Add Money</h1>
+            <form action="" class="bg-white rounded-2xl p-4 sm:p-8">
+                <div class="mb-3">
+                    <h1 class="font-semibold text-sm sm:text-base">Select a bank</h1>
+                    <select id="bank" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" >
+                        <option >Select back</option>
+                        <option>AB bank</option>
+                        <option>IFIC bank</option>
+                        <option>Dutch bangla bank</option>
+                      </select>
+                </div>
+                <div>
+                    <label class="font-semibold text-sm sm:text-base" for="">Bank Account Number</label>
+                    <br/>
+                    <input id="account-number" type="text" placeholder="Enter 11 digit account number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold text-sm sm:text-base" for="">Amount to Add</label>
+                    <br/>
+                    <input id="add-amount" type="text" placeholder="Add Amount to withdraw"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+                </div>
+                <div class="mt-3">
+                    <label class="font-semibold text-sm sm:text-base" for="">Pin Number</label>
+                    <br/>
+                    <input id="add-pin" type="text" placeholder="Enter 4 digit pin number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+                </div>
+
+                <button id="add-money-btn" class="btn text-white bg-[#0874F2] mt-5 w-full rounded-3xl text-sm sm:text-base" >Add Money</button>
+            </form>
+        </div>
+        <!-- cash out -->
+        <div class="form" id="cash-out-parent" style="display: none;">
+          <h1 class="my-5 font-bold text-lg sm:text-xl px-2">Cash out</h1>
+          <form action="" class="bg-white rounded-2xl p-4 sm:p-8">
+            <div>
+                <label class="font-semibold text-sm sm:text-base" for="">Agent Number</label>
+                <br/>
+                <input id="withdraw-agent" type="text" placeholder="Enter 11 digit number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+            </div>
+            <div class="mt-3">
+                <label class="font-semibold text-sm sm:text-base" for="">Amount</label>
+                <br/>
+                <input id="withdraw-amount" type="text" placeholder="Enter Amount to Withdraw"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+            </div>
+            <div class="mt-3">
+                <label class="font-semibold text-sm sm:text-base" for="">Pin Number</label>
+                <br/>
+                <input id="withdraw-pin" type="text" placeholder="Enter 4 digit pin number"  class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+            </div>
+
+            <button id="withdraw-btn" class="btn text-white bg-[#0874F2] mt-5 w-full rounded-3xl text-sm sm:text-base" >Withdraw Money</button>
+        </form>
+        </div>
+
+        <!-- transfer money -->
+         <!-- Transfer Money -->
+         <div class="form" id="transfer-money-parent" style="display:none">
+          <h1 class="my-5 font-bold text-lg sm:text-xl px-2">Transfer Money</h1>
+          <form action="" class="bg-white rounded-2xl p-4 sm:p-8">
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Select Bank</h1>
+                  <select id="transfer-bank" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base">
+                      <option value="">Select recipient's bank</option>
+                      <option value="Same Bank">Same Bank (Payooo)</option>
+                      <option value="AB Bank">AB Bank</option>
+                      <option value="IFIC Bank">IFIC Bank</option>
+                      <option value="Dutch Bangla Bank">Dutch Bangla Bank</option>
+                      <option value="Brac Bank">Brac Bank</option>
+                      <option value="City Bank">City Bank</option>
+                  </select>
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Recipient Account Number</h1>
+                  <input id="transfer-account" type="text" placeholder="Enter recipient's account number" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Recipient Name</h1>
+                  <input id="transfer-name" type="text" placeholder="Enter recipient's name" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Amount to Transfer</h1>
+                  <input id="transfer-amount" type="text" placeholder="Enter amount" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Note (Optional)</h1>
+                  <input id="transfer-note" type="text" placeholder="Add a note" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Pin Number</h1>
+                  <input id="transfer-pin" type="password" placeholder="Enter your PIN" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <button id="transfer-btn" class="btn text-white bg-[#0874F2] mt-5 w-full rounded-3xl text-sm sm:text-base">Transfer Money</button>
+          </form>
+         </div>
+         <!-- Loan -->
+         <div class="form" id="get-bonus-parent" style="display:none">
+          <h1 class="my-5 font-bold text-lg sm:text-xl px-2">Loan Services</h1>
+          
+          <!-- Loan Options Tabs -->
+          <div class="flex gap-2 px-2 mb-5">
+            <button id="take-loan-tab" class="loan-tab flex-1 btn btn-sm bg-[#0874F2] text-white rounded-3xl">Take Loan</button>
+            <button id="pay-loan-tab" class="loan-tab flex-1 btn btn-sm bg-gray-300 text-gray-700 rounded-3xl">Pay Loan</button>
+          </div>
+
+          <!-- Take Loan Form -->
+          <div id="take-loan-form" class="loan-form-section">
+            <!-- Eligibility Check Message -->
+            <div id="loan-check-message" class="hidden bg-blue-50 border border-blue-200 text-blue-800 px-4 py-3 rounded-2xl mb-4 mx-2">
+              <p class="text-sm sm:text-base"><i class="fas fa-spinner fa-spin mr-2"></i>Checking your loan eligibility with the bank...</p>
+            </div>
+            <form action="" class="bg-white rounded-2xl p-4 sm:p-8">
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Select Bank</h1>
+                <select id="loan-bank" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base">
+                  <option value="">Select bank for loan</option>
+                  <option value="Payooo Bank">Payooo Bank</option>
+                  <option value="AB Bank">AB Bank</option>
+                  <option value="IFIC Bank">IFIC Bank</option>
+                  <option value="Dutch Bangla Bank">Dutch Bangla Bank</option>
+                  <option value="Brac Bank">Brac Bank</option>
+                  <option value="City Bank">City Bank</option>
+                  <option value="Standard Chartered">Standard Chartered</option>
+                  <option value="HSBC">HSBC</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Loan Type</h1>
+                <select id="loan-type" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base">
+                  <option value="">Select loan type</option>
+                  <option value="Personal Loan">Personal Loan (5% interest)</option>
+                  <option value="Business Loan">Business Loan (7% interest)</option>
+                  <option value="Education Loan">Education Loan (3% interest)</option>
+                  <option value="Home Loan">Home Loan (6% interest)</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Loan Amount</h1>
+                <input id="loan-amount" type="text" placeholder="Enter loan amount" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Loan Duration (Months)</h1>
+                <select id="loan-duration" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base">
+                  <option value="">Select duration</option>
+                  <option value="6">6 Months</option>
+                  <option value="12">12 Months</option>
+                  <option value="24">24 Months</option>
+                  <option value="36">36 Months</option>
+                  <option value="60">60 Months</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Purpose of Loan</h1>
+                <input id="loan-purpose" type="text" placeholder="e.g., Business expansion, Education" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Pin Number</h1>
+                <input id="take-loan-pin" type="password" placeholder="Enter your PIN" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <button id="take-loan-btn" class="btn text-white bg-[#0874F2] mt-5 w-full rounded-3xl text-sm sm:text-base">Apply for Loan</button>
+            </form>
+          </div>
+
+          <!-- Pay Loan Form -->
+          <div id="pay-loan-form" class="loan-form-section" style="display:none">
+            <form action="" class="bg-white rounded-2xl p-4 sm:p-8">
+              <div class="mb-3 p-4 bg-[#f4f5f7] rounded-xl">
+                <h2 class="font-semibold text-sm sm:text-base mb-2">Outstanding Loan</h2>
+                <p class="text-xl sm:text-2xl font-bold text-[#0874F2]">$<span id="loan-balance">0</span></p>
+                <p class="text-xs sm:text-sm text-gray-600 mt-1">Remaining balance to pay</p>
+                <p class="text-xs sm:text-sm text-gray-700 mt-2">Bank: <span id="loan-bank-display" class="font-semibold">N/A</span></p>
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Pay to Bank</h1>
+                <select id="pay-loan-bank" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" disabled>
+                  <option value="">No active loan</option>
+                  <option value="Payooo Bank">Payooo Bank</option>
+                  <option value="AB Bank">AB Bank</option>
+                  <option value="IFIC Bank">IFIC Bank</option>
+                  <option value="Dutch Bangla Bank">Dutch Bangla Bank</option>
+                  <option value="Brac Bank">Brac Bank</option>
+                  <option value="City Bank">City Bank</option>
+                  <option value="Standard Chartered">Standard Chartered</option>
+                  <option value="HSBC">HSBC</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Payment Amount</h1>
+                <input id="pay-loan-amount" type="text" placeholder="Enter payment amount" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+                <p class="text-xs text-gray-500 mt-2">Minimum payment: $100</p>
+              </div>
+              <div class="mb-3">
+                <h1 class="font-semibold text-sm sm:text-base">Pin Number</h1>
+                <input id="pay-loan-pin" type="password" placeholder="Enter your PIN" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <button id="pay-loan-btn" class="btn text-white bg-green-600 hover:bg-green-700 mt-5 w-full rounded-3xl text-sm sm:text-base">Pay Loan</button>
+            </form>
+          </div>
+         </div>
+         <!-- pay bill -->
+         <div class="form" id="pay-bill-parent" style="display:none">
+          <h1 class="my-5 font-bold text-lg sm:text-xl px-2">Pay Bill</h1>
+          <form action="" class="bg-white rounded-2xl p-4 sm:p-8">
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Select Bill Type</h1>
+                  <select id="bill-type" class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base">
+                      <option value="">Select bill type</option>
+                      <option value="Electricity Bill">Electricity Bill</option>
+                      <option value="Internet Bill">Internet Bill</option>
+                      <option value="Water Bill">Water Bill</option>
+                      <option value="Gas Bill">Gas Bill</option>
+                      <option value="Education Fee">Education Fee</option>
+                      <option value="Donation">Donation</option>
+                  </select>
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Bill Account/Reference Number</h1>
+                  <input id="bill-account" type="text" placeholder="Enter account or reference number" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Amount</h1>
+                  <input id="bill-amount" type="text" placeholder="Enter amount" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <div class="mb-3">
+                  <h1 class="font-semibold text-sm sm:text-base">Pin Number</h1>
+                  <input id="bill-pin" type="password" placeholder="Enter your pin" class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full text-sm sm:text-base" />
+              </div>
+              <button id="pay-bill-btn" class="btn bg-[#0874f2] text-white w-full rounded-3xl text-sm sm:text-base">Pay Bill</button>
+          </form>
+         </div>
+         <div class="form" id="transactions-parent" style="display:none">
+          <div class="flex justify-between items-center px-2">
+            <h1 class="my-5 font-bold text-lg sm:text-xl">Transactions</h1>
+          </div>
+
+          <div id="transaction-container" class="px-2">
+            
+          </div>
+         </div>
+         
+
+    </div>
+
+
+ 
+
+    <script src="./config.js"></script>
+    <script src="./home.js"></script>
+  </body>
+</html>
